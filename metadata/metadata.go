@@ -116,6 +116,7 @@ func initK8sRKESystemImages(data kdm.Data) {
 	if defaultK8sVersion, ok := rkeData.RKEDefaultK8sVersions[RKEVersion[1:]]; ok {
 		DefaultK8sVersion = defaultK8sVersion
 	}
+	logrus.Infof("4444444444444444444 %+v, %+v\n", rkeData, DefaultK8sVersion)
 	maxVersionForMajorK8sVersion := map[string]string{}
 	for k8sVersion, systemImages := range rkeData.K8sVersionRKESystemImages {
 		rkeVersionInfo, ok := rkeData.K8sVersionInfo[k8sVersion]
@@ -150,6 +151,7 @@ func initK8sRKESystemImages(data kdm.Data) {
 	for _, k8sVersion := range maxVersionForMajorK8sVersion {
 		K8sVersionsCurrent = append(K8sVersionsCurrent, k8sVersion)
 	}
+	logrus.Infof("555555555555555555555555555 %+v\n", K8sVersionsCurrent)
 }
 
 func getTagMajorVersion(tag string) string {

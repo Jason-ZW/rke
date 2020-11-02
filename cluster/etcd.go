@@ -217,6 +217,7 @@ func (c *Cluster) etcdSnapshotChecksum(ctx context.Context, snapshotPath string)
 }
 
 func (c *Cluster) getBackupImage() string {
+	logrus.Debugf("[etcd] 1111111111111111111111111111111: [%s]", c.SystemImages.Alpine)
 	rkeToolsImage, err := util.GetDefaultRKETools(c.SystemImages.Alpine)
 	if err != nil {
 		logrus.Errorf("[etcd] error getting backup image %v", err)

@@ -99,6 +99,8 @@ func GetDefaultRKETools(image string) (string, error) {
 		return "", fmt.Errorf("defaultRKETools: no tag %s", image)
 	}
 	defaultImage := metadata.K8sVersionToRKESystemImages[metadata.DefaultK8sVersion].Alpine
+	logrus.Debugf("[etcd] 2222222222222222222222222: [%s]", defaultImage)
+	logrus.Debugf("[etcd] 3333333333333333333333333: [%s] [%s]", metadata.DefaultK8sVersion, metadata.K8sVersionToRKESystemImages[metadata.DefaultK8sVersion])
 	toReplaceTag, err := GetImageTagFromImage(defaultImage)
 	if err != nil || toReplaceTag == "" {
 		return "", fmt.Errorf("defaultRKETools: no replace tag %s", defaultImage)
